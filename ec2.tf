@@ -1,7 +1,6 @@
 resource "aws_network_interface" "my_interface" {
     subnet_id   = aws_subnet.my_subnet.id
     private_ip  = "192.168.0.100"
-    tags        = var.tags
 }
 
 resource "aws_instance" "server" {
@@ -16,5 +15,4 @@ resource "aws_instance" "server" {
     root_block_device {
       volume_size = "30"
     }
-    tags                        = var.tags
 }
