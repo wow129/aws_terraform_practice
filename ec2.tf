@@ -8,6 +8,7 @@ resource "aws_instance" "server" {
     associate_public_ip_address = "true"
     instance_type               = "t2.micro"
     availability_zone           = var.az
+    get_password_data           = "true"
     network_interface {
       network_interface_id      = aws_network_interface.my_interface.id
       device_index              = 0
