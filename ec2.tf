@@ -16,4 +16,5 @@ resource "aws_instance" "server" {
     root_block_device {
       volume_size = "30"
     }
+    vpc_security_group_ids      = aws_security_group.allow_self.id
 }
