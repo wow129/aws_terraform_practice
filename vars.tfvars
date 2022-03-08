@@ -13,3 +13,8 @@ variable "tags" {
         Environment = "terraform practice"
     }
 }
+
+variable "az" {
+    type = string
+    default = "us-west-2a"
+}
