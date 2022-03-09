@@ -6,8 +6,8 @@ resource "aws_instance" "server" {
     root_block_device {
       volume_size = "30"
     }
-    #key_name = "terraform-key"
-    security_groups = [aws_security_group.allow_rdp.name]
+    key_name = "terraform-key"
+    #security_groups = [aws_security_group.allow_rdp.name]
 }
 
 #resource "aws_security_group" "allow_rdp" {
