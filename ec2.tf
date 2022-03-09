@@ -3,10 +3,22 @@ resource "aws_instance" "server" {
     associate_public_ip_address = "true"
     instance_type               = "t2.micro"
     availability_zone           = var.az
-    get_password_data           = "true"
     root_block_device {
       volume_size = "30"
     }
-    subnet_id                   = aws_subnet.my_subnet.id
-    vpc_security_group_ids      = [aws_security_group.allow_self.id]
+    key_name = "terraform-key"
+    security_groups = aws_security_group.allow_rdp.name
+}
+
+resource "aws_security_group" "allow_rdp" {
+  name = "allow_rdp"
+  description = "Allow rdp traffic"
+
+  ingress {
+    from_port = 3389
+    to_port = 3389
+    protocol = "tcp"
+
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }
