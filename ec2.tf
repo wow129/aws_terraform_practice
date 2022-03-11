@@ -7,10 +7,10 @@ resource "aws_instance" "server" {
       volume_size = "30"
     }
     key_name = "terraform-key"
-    #security_groups = [aws_security_group.allow_rdp.name]
+    security_groups = [aws_security_group.allow_rdp.name]
 }
 
-/* resource "aws_security_group" "allow_rdp" {
+resource "aws_security_group" "allow_rdp" {
  name = "allow_rdp"
  description = "Allow rdp traffic"
 
@@ -21,4 +21,4 @@ resource "aws_instance" "server" {
 
     cidr_blocks = ["0.0.0.0/0"]
   }
-} */
+}
