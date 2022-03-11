@@ -7,7 +7,7 @@ resource "aws_instance" "server" {
     }
     key_name = "terraform-key"
     subnet_id = aws_subnet.terraform.id
-    security_groups = [aws_security_group.terraform_practice.name]
+    vpc_security_group_ids = [aws_security_group.terraform_practice.id]
     tags = {
       Name = "Terraform EC2"
     }
