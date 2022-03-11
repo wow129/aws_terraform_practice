@@ -7,6 +7,5 @@ resource "aws_instance" "server" {
       volume_size = "30"
     }
     key_name = "terraform-key"
-    security_groups = [aws_security_group.allow_rdp.name, aws_security_group.allow_http.name, aws_security_group.allow_https.name, aws_security_group.allow_all_out.name]
+    security_groups = [aws_security_group.terraform_practice.name]
 }
-
