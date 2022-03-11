@@ -1,5 +1,4 @@
 resource "aws_instance" "server" {
-    name                        = "terraform practice"
     ami                         = var.image
     associate_public_ip_address = "true"
     instance_type               = "t2.micro"
@@ -8,7 +7,7 @@ resource "aws_instance" "server" {
       volume_size = "30"
     }
     key_name = "terraform-key"
-    security_groups = [aws_security_group.allow_rdp.name, aws_security_group.allow_http.name, aws_security_group.allow_https.name]
+    security_groups = [aws_security_group.allow_rdp.name, aws_security_group.allow_http.name, aws_security_group.allow_https.name, aws_security_group.allow_all_out.name]
 }
 
 resource "aws_security_group" "allow_rdp" {
@@ -58,7 +57,7 @@ resource "aws_security_group" "allow_all_out" {
     from_port = 0
     to_port = 0
     protocol = "-1"
-    
+
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
