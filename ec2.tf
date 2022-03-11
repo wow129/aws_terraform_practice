@@ -6,7 +6,6 @@ resource "aws_instance" "server" {
       volume_size = "30"
     }
     key_name = "terraform-key"
-    security_groups = [aws_security_group.terraform_practice.name]
     subnet_id = aws_subnet.terraform.id
     tags = {
       Name = "Terraform EC2"

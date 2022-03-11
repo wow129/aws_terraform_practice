@@ -1,6 +1,7 @@
 resource "aws_security_group" "terraform_practice" {
     name = "Terraform Practice"
     description = "Security group while practicing terraform."
+    vpc_id = aws_vpc.terraform.id
 }
 
 resource "aws_security_group_rule" "allow_http" {
