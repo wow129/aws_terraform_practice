@@ -1,6 +1,5 @@
 resource "aws_vpc" "terraform" {
     cidr_block = "10.0.0.0/16"
-    availability_zone = var.az
     tags = {
         Name = "Terraform VPC"
     }
@@ -9,6 +8,7 @@ resource "aws_vpc" "terraform" {
 resource "aws_subnet" "terraform" {
     cidr_block = "10.0.1.0/24"
     vpc_id = aws_vpc.terraform.id
+    availability_zone = var.az
     tags = {
         Name = "Terraform Subnet"
     }
