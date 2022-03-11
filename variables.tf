@@ -1,13 +1,18 @@
 variable "region" {
     type = string
-    default = "us-west-2"
+    description = "AWS region"
 }
 variable "image" {
     type = string
-    default = "ami-01977bc15980f9223"
+    description = "EC2 Image AMI"
 }
 
 variable "az" {
     type = string
-    default = "us-west-2a"
+    description = "AWS availability zone"
+}
+
+variable "all_ips" {
+    type = list
+    description = "CIDR list that covers all IP4 CIDR addresses"
 }
