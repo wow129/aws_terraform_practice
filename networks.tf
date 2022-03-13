@@ -30,4 +30,7 @@ resource "aws_route_table" "terraform" {
     }
 }
 
-# add internet route to subnet
+resource "aws_route_table_association" "terraform_subnet" {
+    subnet_id = aws_subnet.terraform.id
+    route_table_id = aws_route_table.terraform.id
+}
