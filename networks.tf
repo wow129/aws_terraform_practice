@@ -29,3 +29,5 @@ resource "aws_route_table" "terraform" {
         gateway_id = aws_internet_gateway.terraform.id
     }
 }
+
+# need to try adding a NAT gateway to see if that fixes connectivity issues
