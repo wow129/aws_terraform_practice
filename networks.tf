@@ -30,4 +30,4 @@ resource "aws_route_table" "terraform" {
     }
 }
 
-# need to try adding a NAT gateway to see if that fixes connectivity issues
+# add internet route to subnet
