@@ -18,6 +18,6 @@ variable "all_ips" {
 }
 
 variable "my_ip" {
-    type = string
+    type = list
     description = "Public IP address of my computer"
 }
