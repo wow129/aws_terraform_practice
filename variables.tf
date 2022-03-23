@@ -16,3 +16,8 @@ variable "all_ips" {
     type = list
     description = "CIDR list that covers all IP4 CIDR addresses"
 }
+
+variable "my_ip" {
+    type = string
+    description = "Public IP address of my computer"
+}

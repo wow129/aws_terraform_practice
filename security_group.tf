@@ -29,7 +29,7 @@ resource "aws_security_group_rule" "allow_ssh" {
     from_port = 22
     to_port = 22
     protocol = "tcp"
-    cidr_blocks = var.all_ips
+    cidr_blocks = var.my_ip
     security_group_id = aws_security_group.terraform_practice.id
     description = "Allow all ingress SSH traffic"
 }
